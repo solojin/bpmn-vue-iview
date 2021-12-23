@@ -1,0 +1,59 @@
+{
+  "name": "bpmn-vue-iview",
+  "version": "0.0.4",
+  "description": "基于 'vue' 、'bpmn.io@7.0' 、 'iview@4.7' 和 'workflow-bpmn-modeler@0.2.8'，实现 flowable 的 modeler 模型设计器",
+  "main": "dist/bpmn-vue-iview.umd.min.js",
+  "scripts": {
+    "dev": "vue-cli-service serve --open",
+    "demo": "cross-env NODE_ENV=demo vue-cli-service build",
+    "lib": "cross-env NODE_ENV=lib vue-cli-service build",
+    "cdn": "cross-env NODE_ENV=cdn vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build": "cross-env NODE_ENV=build vue-cli-service build --target lib --inline-vue --entry package/index.js",
+    "prepublish": "yarn build",
+    "postpublish": "yarn lib && yarn cdn && yarn demo"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": "git+https://github.com/solojin/bpmn-vue-iview.git",
+  "keywords": [
+    "vue",
+    "iview",
+    "bpmn",
+    "flowable",
+    "工作流",
+    "模型设计器",
+    "流程设计器"
+  ],
+  "author": "jinyangjie <939249500@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/solojin/bpmn-vue-iview/issues"
+  },
+  "dependencies": {
+    "bpmn-js": "^7.2.1",
+    "view-design": "^4.7.0",
+    "vue": "^2.6.10",
+    "xcrud": "^0.4.19"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.4.6",
+    "@vue/cli-plugin-eslint": "^4.4.6",
+    "@vue/cli-service": "^4.4.6",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.5.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "files": [
+    "dist",
+    "package",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ]
+}
